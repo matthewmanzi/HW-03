@@ -105,36 +105,56 @@ var upArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","
 
 symArray= ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","`","~","[","]","{","}",";",":",""","'",",","<",".",">","/","?"]
 
-prompt("pw is how long?")
-get input and set it to var pwLength
+var pwLength= prompt("pw is how long (8-128?");
+    if (8 > pwLength > 128) {
+        alert("PW needs to be between 8 and 128");
+        break;
+    }
+    
+    else {};
 
-prompt("use uppercase?")
-if input true, append function upGen() to choiceArray
-else do nothing
+var useUp = confirm("use uppercase?");
+    if (useUp == true) {
+        choiceArray.push(upGen());
+    }
+    
+    else {};
 
-prompt("use lowercase?")
-if input true, append function lowGen() to choiceArray
-else do nothing
+var useLow = confirm("use lowercase?");
+    if (useLow = true) {
+        choiceArray.push(lowGen());
+    }
+    
+    else {}
 
-prompt("use numbers?")
-if input true, append function numGen() to choiceArray
-else do nothing
+var useNum = confirm("use numbers?");
+    if (useNum = true) {
+        choiceArray.push(numGen());
+    }
+    
+    else {}
 
-prompt("use symbols?")
-if input true, append function symGen() to choiceArray
-else do nothing
+var useSym = confirm("use symbols?");
+    if (useSym = true) {
+        choiceArray.push(symGen())
+    }
+    
+    else {};
 
-if all false, alert("Can't make a password without any characters to work with bud");
+if (choiceArray[0]= undefined) {
+    alert("Can't make a password without any characters to work with bud");
+    break;
+    }
+    
+    else {}
+    
+//function choiceArray() now contains a list of the RNG generators for each type
 
-function choiceArray() now contains a list of the RNG generators for each type
-
-get choiceArray.length = var choiceNum
+var choiceNum = choiceArray.length;
 
 for (i=0; i<pwLength; i++) { 
-    
-generate RNG from 0 to choiceNum = var choice;
-
-append returned character from the function called at choiceArray[choice] to pw[];
+    var x = math.floor(math.random()*choiceNum); //RNG picks a function in the array
+    pw.push(choiceArray[x]); //function called returns its own RNG and appends
 }
 
 document.write(for (i=0; i<pw.length; i++) {pw[i]}); //something like that. or maybe concatenate a string etc
