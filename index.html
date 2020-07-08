@@ -52,7 +52,106 @@
                     </div>
                 </div>
               </div>
-              
+              <script>
+//Task is to create a clean repsonsive interface that generates a random password on-click, with prompts beforehand asking the user whether they would like to satisfy the 0following conditions:
+
+//Must be between 8 and 128 characters
+//Prompt for including lowercase 
+//Prompt whether to include numbers 
+//Prompt for using uppercase 
+//Prompt for using special characters 
+//Sanity check for user input
+//GUI level display output
+
+var pw[];
+
+var choiceArray[];
+
+var pwLength //between 8 and 128 characters??
+
+function upGen() { //returns a randomly selected UC letter from upArray
+
+    var upNum = math.floor(math.random()*26);
+    return upArray[upNum];
+}
+
+
+function lowGen() { //returns a randomly selected LC letter from lowArray
+
+    var lowNum = math.floor(math.random()*26);
+    return lowArray[lowNum];
+}
+
+
+function numGen() { //returns a randomly selected number from numArray
+
+    var numNum = math.floor(math.random()*10);
+    return numArray[numNum];
+}
+
+
+function symGen() returns a randomly selected symbol from symArray
+
+    var symNum = math.floor(math.random()*30;
+    return symArray[symNum];
+}
+
+var numArray = [1,2,3,4,5,6,7,8,9,0];
+
+var lowArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",
+"o","p","q","r","s","t","u","v","w","x","y","z"];
+
+var upArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+symArray= ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","`","~","[","]","{","}",";",":",""","'",",","<",".",">","/","?"]
+
+prompt("pw is how long?")
+get input and set it to var pwLength
+
+prompt("use uppercase?")
+if input true, append function upGen() to choiceArray
+else do nothing
+
+prompt("use lowercase?")
+if input true, append function lowGen() to choiceArray
+else do nothing
+
+prompt("use numbers?")
+if input true, append function numGen() to choiceArray
+else do nothing
+
+prompt("use symbols?")
+if input true, append function symGen() to choiceArray
+else do nothing
+
+if all false, alert("Can't make a password without any characters to work with bud");
+
+function choiceArray() now contains a list of the RNG generators for each type
+
+get choiceArray.length = var choiceNum
+
+for (i=0; i<pwLength; i++) { 
+    
+generate RNG from 0 to choiceNum = var choice;
+
+append returned character from the function called at choiceArray[choice] to pw[];
+}
+
+document.write(for (i=0; i<pw.length; i++) {pw[i]}); //something like that. or maybe concatenate a string etc
+
+
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+              </script>
           
           
           
