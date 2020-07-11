@@ -1,0 +1,108 @@
+<html>
+<head>    
+<title>RNG PW GEN</title>
+     <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--Latest JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+
+
+
+
+
+<body>
+    <script>
+        // Array declarations
+        const numArray = ["1","2","3","4","5","6","7","8","9","0"]; //10
+
+        const lowArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]; //26
+
+        const upArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; //26
+
+        const symArray = ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","`","~","[","]","{","}",";",":","'",",","<",".",">","/","?"]; //29
+
+
+        //Empty array to hold password
+        const pw = [];
+
+
+        var pwLength = prompt("pw is how long (8-128)?");
+        
+        var truth = 0;  // this counts how many prompts are answered affirmative so we can divide the for loop below to match the correct pw length
+
+        var useNum = confirm("use numbers?");
+            if (useNum) {truth++}   //add one to truth counter if yes
+    
+        var useLow = confirm("use lowercase?");
+            if (useLow) {truth++}
+       
+        var useUp = confirm("use uppercase?");
+            if (useUp) {truth++}
+      
+        var useSym = confirm("use symbols?");
+            if (useSym) {truth++}
+
+       
+
+    for (i=0; i<(pwLength / truth); i++) {
+        function numGen() {
+            return numArray[Math.floor(Math.random() * 10)]; //returns a randomly selected number each pass
+        }
+        
+        function lowGen() {
+            return lowArray[Math.floor(Math.random() * 26)]; //returns a randomly selected lowercase each pass
+        }
+        
+        function upGen() {
+            return upArray[Math.floor(Math.random() * 26)]; //returns a randomly selected uppercase each pass
+        }
+                
+        function symGen() {
+            return symArray[Math.floor(Math.random() * 29)]; //returns a randomly selected uppercase each pass
+        }
+
+
+
+
+        if (useNum) {
+            pw2.push(numGen());
+        }           
+      
+        if (useLow) {
+            pw2.push(lowGen());
+        }
+      
+        if (useUp) {
+            pw2.push(upGen());
+        }
+     
+        if (useSym) {
+            pw2.push(symGen());
+        }
+
+        var q = pw2.length;
+        var rando = Math.floor(Math.random() * q);
+        pw.push(pw2[rando]);
+             
+    }
+
+    var cleanup = (pw.length - pwLength)
+    for (i=0; i<cleanup; i++) {
+        pw.pop();
+    }
+   
+
+    for (i=0; i<pwLength; i++) {
+        document.write(pw[i]);
+    }
+        
+
+
+    </script>
+</html>

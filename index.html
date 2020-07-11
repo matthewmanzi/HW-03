@@ -4,7 +4,7 @@
     <title>PASSWORD TRANSMOGRIFIER</title>
     
         <!--CSS stylsheet-->
-        <link rel="stylesheet" href="./Assets/CSS/HW02.css">
+        <!--<link rel="stylesheet" href="./Assets/CSS/HW02.css">-->
 
         <!--bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
@@ -19,7 +19,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
         <!--Linked JS file containing my scripts-->
-        <script src="/scripts.js"></script>
+        <!--<script src="/scripts.js"></script>-->
 
         <!--Responsive viewport-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
   </head>
   
   <body>
-      <div class="container">
+<!-- <div class="container">
           <section> 
               <div id="descriptionHeader">
                   <p>RANDOM PASSWORD TRANSMOGRIFIER</p>
@@ -52,7 +52,9 @@
                     </div>
                 </div>
               </div>
-              <script>
+            -->
+
+<script>
 //Task is to create a clean repsonsive interface that generates a random password on-click, with prompts beforehand asking the user whether they would like to satisfy the 0following conditions:
 
 //Must be between 8 and 128 characters
@@ -63,62 +65,59 @@
 //Sanity check for user input
 //GUI level display output
 
-var pw[];
+const pw = [];
 
-var choiceArray[];
+const choiceArray = [];
 
-var pwLength //between 8 and 128 characters??
+var pwLength = 0; //between 8 and 128 characters??
+
+var upNum;
 
 function upGen() { //returns a randomly selected UC letter from upArray
 
-    var upNum = math.floor(math.random()*26);
+    var upNum = Math.floor(Math.random()*26);
     return upArray[upNum];
 }
 
 
 function lowGen() { //returns a randomly selected LC letter from lowArray
 
-    var lowNum = math.floor(math.random()*26);
+    var lowNum = Math.floor(Math.random()*26);
     return lowArray[lowNum];
 }
 
 
 function numGen() { //returns a randomly selected number from numArray
 
-    var numNum = math.floor(math.random()*10);
+    var numNum = Math.floor(Math.random()*10);
     return numArray[numNum];
 }
 
 
-function symGen() returns a randomly selected symbol from symArray
+function symGen() { //returns a randomly selected symbol from symArray
 
-    var symNum = math.floor(math.random()*30;
+    var symNum = Math.floor(Math.random()*29);
     return symArray[symNum];
 }
 
-var numArray = [1,2,3,4,5,6,7,8,9,0];
+var numArray = ["1","2","3","4","5","6","7","8","9","0"];
 
 var lowArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",
 "o","p","q","r","s","t","u","v","w","x","y","z"];
 
 var upArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
-symArray= ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","`","~","[","]","{","}",";",":",""","'",",","<",".",">","/","?"]
+var symArray= ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","`","~","[","]","{","}",";",":","'",",","<",".",">","/","?"]
 
-var pwLength= prompt("pw is how long (8-128?");
-    if (8 > pwLength > 128) {
-        alert("PW needs to be between 8 and 128");
-        break;
-    }
-    
-    else {};
+var pwLength = prompt("pw is how long (8-128)?");
+
 
 var useUp = confirm("use uppercase?");
-    if (useUp == true) {
+    if (useUp = true) {
         choiceArray.push(upGen());
     }
     
-    else {};
+    else {}
 
 var useLow = confirm("use lowercase?");
     if (useLow = true) {
@@ -139,11 +138,10 @@ var useSym = confirm("use symbols?");
         choiceArray.push(symGen())
     }
     
-    else {};
+    else {}
 
 if (choiceArray[0]= undefined) {
     alert("Can't make a password without any characters to work with bud");
-    break;
     }
     
     else {}
@@ -153,13 +151,13 @@ if (choiceArray[0]= undefined) {
 var choiceNum = choiceArray.length;
 
 for (i=0; i<pwLength; i++) { 
-    var x = math.floor(math.random()*choiceNum); //RNG picks a function in the array
-    pw.push(choiceArray[x]); //function called returns its own RNG and appends
+    var x = Math.floor(Math.random()*choiceNum);
+    console.log(upArray[upNum]); 
+    
+    //RNG picks a function in the array
+    //pw.push(choiceArray[x]); //function called returns its own RNG and appends
+    document.write(choiceArray[x]);
 }
-
-document.write(for (i=0; i<pw.length; i++) {pw[i]}); //something like that. or maybe concatenate a string etc
-
-
                   
                   
                   

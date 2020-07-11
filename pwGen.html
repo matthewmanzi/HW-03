@@ -1,0 +1,108 @@
+<html>
+<head>    
+<title>RNG PW GEN</title>
+     <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--Latest JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+
+
+
+
+
+<body>
+    <script>
+        // Array declarations
+        const numArray = ["1","2","3","4","5","6","7","8","9","0"]; //10
+
+        const lowArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]; //26
+
+        const upArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; //26
+
+        const symArray = ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","`","~","[","]","{","}",";",":","'",",","<",".",">","/","?"]; //29
+
+
+        //Empty arrays for password and holding array
+        const pw = [];
+
+        const pw2 = [];
+
+
+        //user setup
+
+        var pwLength = prompt("pw is how long (8-128)?");
+        
+        var useNum = confirm("use numbers?");
+    
+        var useLow = confirm("use lowercase?");
+       
+        var useUp = confirm("use uppercase?");
+      
+        var useSym = confirm("use symbols?");
+
+       
+       //meat and potatoes
+
+    for (i=0; i<pwLength; i++) {
+        
+        //each pass, select an RNG item from each array
+        
+        function numGen() {
+            return numArray[Math.floor(Math.random() * 10)]; //generates a randomly selected number each pass for potential use
+        }
+        
+        function lowGen() {
+            return lowArray[Math.floor(Math.random() * 26)]; //generates a randomly selected lowercase each pass for potential use
+        }
+        
+        function upGen() {
+            return upArray[Math.floor(Math.random() * 26)]; //generates a randomly selected uppercase each pass for potential use
+        }
+                
+        function symGen() {
+            return symArray[Math.floor(Math.random() * 29)]; //generates a randomly selected uppercase each pass for potential use
+        }
+
+
+        // based on answers to prompts, the following may or may not be invoked to push their RNG each pass to a holding array for that pass
+
+
+        if (useNum) {   //if the user answered "yes" (or "OK"), then put it in the holding array, otherwise do nothing
+            pw2.push(numGen());
+        }           
+      
+        if (useLow) {
+            pw2.push(lowGen());
+        }
+      
+        if (useUp) {
+            pw2.push(upGen());
+        }
+     
+        if (useSym) {
+            pw2.push(symGen());
+        }
+
+        //now take the holding array and randomly select a finalist to be added to the password for this pass, then start anew
+
+        var q = pw2.length;
+        var rando = Math.floor(Math.random() * q);
+        pw.push(pw2[rando]);
+             
+    }
+
+   
+    //convert the finalized password array into a readable string for victory
+
+    for (i=0; i<pwLength; i++) {
+        document.write(pw[i]);
+    }
+
+    </script>
+</html>
