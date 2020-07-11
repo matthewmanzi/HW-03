@@ -1,1 +1,60 @@
+.choiceBox {
+    display: block;
+    background-color: green;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-style: groove;
+    border-color: rgb(0, 80, 126);
+    margin-bottom: 2%;
+}
 
+.outerBox {
+    display: inline-flexbox;
+    background-color: green;
+
+}
+
+.pageHeader {
+    color: black;
+    font-size: 14pt;
+    text-align: center;
+}
+
+.pageHeaderSub {
+    color: rgba(0, 0, 0, 0.541);
+    font-size: 10pt;
+    text-align: center;
+}
+
+.pwBox {
+    display: inline-flexbox;
+    background-color: rgb(200, 255, 1);
+}
+
+.pwText {
+    font-size: 12pt;
+    color: red;
+}
+
+.headerText {
+    font-size: 20pt;
+    color: red;
+}
+
+.choiceText {
+    font-size: 12pt;
+    color: pink;
+}
+
+.gutter {
+    display: block;
+}
+
+.wrapper {
+    display: inline-flexbox;
+    background: rgb(9,1,237);
+    background: radial-gradient(circle, rgba(9,1,237,0.8267682072829132) 0%, rgba(204,70,53,0.6502976190476191) 0%, rgba(101,61,172,1) 0%, rgba(237,19,159,0.8071603641456583) 0%, rgba(2,0,148,0.7595413165266106) 15%, rgba(167,41,39,0.6811099439775911) 20%, rgba(171,124,183,1) 31%, rgba(171,132,196,1) 32%, rgba(171,140,209,1) 33%, rgba(171,148,222,1) 34%, rgba(169,102,144,0.9444152661064426) 42%, rgba(143,11,155,0.7343312324929971) 51%, rgba(9,2,230,0.4542191876750701) 52%, rgba(101,170,145,1) 55%, rgba(19,190,174,0.7959558823529411) 62%, rgba(20,53,233,0.7959558823529411) 73%, rgba(21,0,255,0.5578606442577031) 80%, rgba(78,28,167,1) 84%, rgba(9,0,246,0.7175245098039216) 94%, rgba(0,0,0,1) 100%, rgba(217,135,57,1) 100%, rgba(11,2,221,0.3897934173669467) 100%, rgba(100,96,198,1) 100%, rgba(9,9,100,1) 100%, rgba(9,9,121,1) 100%);
+    background-;
+}
