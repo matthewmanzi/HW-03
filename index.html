@@ -1,222 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>PASSWORD TRANSMOGRIFIER</title>
+<html>
+<head>    
+<title>RNG PW GEN</title>
+     <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--Latest JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+
+
+
+
+
+<body>
+    <script>
+        // Array declarations
+        const numArray = ["1","2","3","4","5","6","7","8","9","0"]; //10
+
+        const lowArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]; //26
+
+        const upArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; //26
+
+        const symArray = ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","`","~","[","]","{","}",";",":","'",",","<",".",">","/","?"]; //29
+
+
+        //Empty arrays for password and holding array
+        const pw = [];
+
+        const pw2 = [];
+
+
+        //user setup
+
+        var pwLength = prompt("pw is how long (8-128)?");
+        
+        var useNum = confirm("use numbers?");
     
-        <!--CSS stylsheet-->
-        <!--<link rel="stylesheet" href="./Assets/CSS/HW02.css">-->
+        var useLow = confirm("use lowercase?");
+       
+        var useUp = confirm("use uppercase?");
+      
+        var useSym = confirm("use symbols?");
 
-        <!--bootstrap-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+       
+       //meat and potatoes
 
-        <!--jQuery-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-        <!--Popper JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-        <!--Latest JavaScript-->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-        <!--Linked JS file containing my scripts-->
-        <!--<script src="/scripts.js"></script>-->
-
-        <!--Responsive viewport-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!--Notes: "width=device-width" sets the width of the page to follow the width of the device. "initial-scale=1" sets initial zoom level when browser first loads the page-->
-
-  </head>
-  
-  <body>
-<!-- <div class="container">
-          <section> 
-              <div id="descriptionHeader">
-                  <p>RANDOM PASSWORD TRANSMOGRIFIER</p>
-              </div>
-              <div id="descriptionSubhead">
-                  <p>An Idle Hands Automation Deploymen</p>
-              </div>
-              <div class="form-group">
-                  
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="col-sm-12"></div>
-                            <div class="row">
-                                <div class="col-sm-2">Reserved. Maybe for headers?</div>
-                                <div class="col-sm-2">How long shouuld the password be?</div>
-                                <div class="col-sm-2">Do you desire lowercase letters in your password?</div>
-                                <div class="col-sm-2">Would you like uppercase letters in your password?</div>
-                                
-                                
-                                
-                    </div>
-                </div>
-              </div>
-            -->
-
-<script>
-//Task is to create a clean repsonsive interface that generates a random password on-click, with prompts beforehand asking the user whether they would like to satisfy the 0following conditions:
-
-//Must be between 8 and 128 characters
-//Prompt for including lowercase 
-//Prompt whether to include numbers 
-//Prompt for using uppercase 
-//Prompt for using special characters 
-//Sanity check for user input
-//GUI level display output
-
-const pw = [];
-
-const choiceArray = [];
-
-var pwLength = 0; //between 8 and 128 characters??
-
-var upNum;
-
-function upGen() { //returns a randomly selected UC letter from upArray
-
-    var upNum = Math.floor(Math.random()*26);
-    return upArray[upNum];
-}
+    for (i=0; i<pwLength; i++) {
+        
+        //each pass, select an RNG item from each array
+        
+        function numGen() {
+            return numArray[Math.floor(Math.random() * 10)]; //generates a randomly selected number each pass for potential use
+        }
+        
+        function lowGen() {
+            return lowArray[Math.floor(Math.random() * 26)]; //generates a randomly selected lowercase each pass for potential use
+        }
+        
+        function upGen() {
+            return upArray[Math.floor(Math.random() * 26)]; //generates a randomly selected uppercase each pass for potential use
+        }
+                
+        function symGen() {
+            return symArray[Math.floor(Math.random() * 29)]; //generates a randomly selected uppercase each pass for potential use
+        }
 
 
-function lowGen() { //returns a randomly selected LC letter from lowArray
-
-    var lowNum = Math.floor(Math.random()*26);
-    return lowArray[lowNum];
-}
+        // based on answers to prompts, the following may or may not be invoked to push their RNG each pass to a holding array for that pass
 
 
-function numGen() { //returns a randomly selected number from numArray
+        if (useNum) {   //if the user answered "yes" (or "OK"), then put it in the holding array, otherwise do nothing
+            pw2.push(numGen());
+        }           
+      
+        if (useLow) {
+            pw2.push(lowGen());
+        }
+      
+        if (useUp) {
+            pw2.push(upGen());
+        }
+     
+        if (useSym) {
+            pw2.push(symGen());
+        }
 
-    var numNum = Math.floor(Math.random()*10);
-    return numArray[numNum];
-}
+        //now take the holding array and randomly select a finalist to be added to the password for this pass, then start anew
 
-
-function symGen() { //returns a randomly selected symbol from symArray
-
-    var symNum = Math.floor(Math.random()*29);
-    return symArray[symNum];
-}
-
-var numArray = ["1","2","3","4","5","6","7","8","9","0"];
-
-var lowArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",
-"o","p","q","r","s","t","u","v","w","x","y","z"];
-
-var upArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-
-var symArray= ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","`","~","[","]","{","}",";",":","'",",","<",".",">","/","?"]
-
-var pwLength = prompt("pw is how long (8-128)?");
-
-
-var useUp = confirm("use uppercase?");
-    if (useUp = true) {
-        choiceArray.push(upGen());
+        var q = pw2.length;
+        var rando = Math.floor(Math.random() * q);
+        pw.push(pw2[rando]);
+             
     }
-    
-    else {}
 
-var useLow = confirm("use lowercase?");
-    if (useLow = true) {
-        choiceArray.push(lowGen());
+   
+    //convert the finalized password array into a readable string for victory
+
+    for (i=0; i<pwLength; i++) {
+        document.write(pw[i]);
     }
-    
-    else {}
 
-var useNum = confirm("use numbers?");
-    if (useNum = true) {
-        choiceArray.push(numGen());
-    }
-    
-    else {}
-
-var useSym = confirm("use symbols?");
-    if (useSym = true) {
-        choiceArray.push(symGen())
-    }
-    
-    else {}
-
-if (choiceArray[0]= undefined) {
-    alert("Can't make a password without any characters to work with bud");
-    }
-    
-    else {}
-    
-//function choiceArray() now contains a list of the RNG generators for each type
-
-var choiceNum = choiceArray.length;
-
-for (i=0; i<pwLength; i++) { 
-    var x = Math.floor(Math.random()*choiceNum);
-    console.log(upArray[upNum]); 
-    
-    //RNG picks a function in the array
-    //pw.push(choiceArray[x]); //function called returns its own RNG and appends
-    document.write(choiceArray[x]);
-}
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-              </script>
-          
-          
-          
-          
-          
-          </section>
-      </div>
-          
-          
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-  </body>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    </script>
 </html>
