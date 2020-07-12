@@ -1,6 +1,8 @@
-# HW-03
-Random Password Regenerizer
-An Idle Hands Deployment
+# Random Password Regenerizer
+
+## An Idle Hands Deployment
+
+### Homework #3
 
 This is a small application to quickly generate a random password using a combination of lowercase letters, uppercase letters, numbers, and symbols. The user has the ability to choose which to include, as well as to define how long they wish the password to be (between 8 and 128 characters).
 
@@ -13,5 +15,7 @@ There are no special software or hardware requirements, just a modern browser an
 Enjoy the colorful layout and smooth interface as you abuse this application for an end-goal that you could achieve yourself by mashing a keyboard in ten seconds, as it took me many frustrating laborious hours to design and debug.
 
 --MM
+
+[Link to the Random Password Regenerizer](https://matthewmanzi.github.io/HW-03/).
 
 ![screenshot](https://github.com/matthewmanzi/HW-03/blob/master/preview.jpg)
