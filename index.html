@@ -26,38 +26,119 @@
     <div class="wrapper">
         <div class="row">
             <div class="col-sm-12 d-flex justify-content-center">
-               <div>
+               <div> <!--Page title-->
                    <p class="pageHeader"><br>RANDOM PASSWORD REGENERIZER</p>
                    <p class="pageHeaderSub">An Idle Hands Deployment</p>
                    <div class="row">
                         <div class="col-sm-12">
-                            <div class="outerBox">
-                                <form id="pwForm"  class="choiceBox">
-                                    <label for="pwNumber" class="choiceText">Length of password (8-128 characters)</label></br>
+                            <div>
+                                <form id="pwForm"  class="choiceBox"> <!--Password length prompt-->
+                                    <label for="pwNumber" class="choiceText">Length of password (8-128 numbers)?</label></br>
                                     <div class="d-flex justify-content-center">
                                         <input type="text" id="pwNumber" name="pwNumber"><br><br>
                                     </div>
-                                                  
-                                    <p class="choiceText">Include lowercase letters in your password?</p>
-                                    <input type="radio" id="useLowYes" name="useLow" value="yes"> yes<br>
-                                    <input type="radio" id="useLowNo" name="useLow" value="no"> no<br>
-                      
-                                    <p class="choiceText">Include uppercase letters in your password?</p>
-                                    <input type="radio" id="useUpYes" name="useUp" value="yes"> yes<br>
-                                    <input type="radio" id="useUpNo" name="useUp" value="no"> no<br>
-                 
-                                    <p class="choiceText">Include numbers in your password?</p>
-                                    <input type="radio" id="useNumYes" name="useNum" value="yes"> yes<br>
-                                    <input type="radio" id="useNumNo" name="useNum" value="no"> no<br>
-                    
-                                    <p class="choiceText">Include symbols in your password?</p>
-                                    <input type="radio" id="useSymYes" name="useSym" value="yes"> yes<br>
-                                    <input type="radio" id="useSymNo" name="useSym" value="no"> no<br>
+                                    
+                                    <br>
+                                    <div class="separator"><br></div> <!--For make look good-->
+                                    <br>
+                                    
+                                    <div> <!--lowercase inclusion prompt-->
+                                        <p class="choiceText">Include lowercase letters?</p>
+                                        <div class="row">
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <input type="radio" class="radioButton" id="useLowYes" name="useLow" value="yes"><br><br>
+                                            </div>
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <p class="radioText yes">Yes</p><br><br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <input type="radio" class="radioButton" id="useLowNo" name="useLow" value="no"><br><br>
+                                            </div>
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <p class="radioText no">No</p><br><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <br>
+                                    <div class="separator"><br></div>
+                                    <br>
+
+                                    <div> <!--uppercase inclusion prompt-->
+                                        <p class="choiceText">Include uppercase letters?</p>
+                                        <div class="row">
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <input type="radio" class="radioButton" id="useUpYes" name="useUp" value="yes"><br><br>
+                                            </div>
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <p class="radioText yes">Yes</p><br><br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <input type="radio" class="radioButton" id="useUpNo" name="useUp" value="no"><br><br>
+                                            </div>
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <p class="radioText no">No</p><br><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <br>
+                                    <div class="separator"><br></div>
+                                    <br>
+
+                                    <div> <!--number inclusion prompt-->                 
+                                        <p class="choiceText">Include numbers?</p>
+                                        <div class="row">
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <input type="radio" class="radioButton" id="useNumYes" name="useNum" value="yes"><br><br>
+                                            </div>
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <p class="radioText yes">Yes</p><br><br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <input type="radio" class="radioButton" id="useNumNo" name="useNum" value="no"><br><br>
+                                            </div>
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <p class="radioText no">No</p></br><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <br>
+                                    <div class="separator"><br></div>
+                                    <br>
+
+                                    <div> <!--symbol inclusion prompt-->
+                                        <p class="choiceText">Include symbols?</p>
+                                        <div class="row">
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <input type="radio" class="radioButton" id="useSymYes" name="useSym" value="yes"><br><br>
+                                            </div>
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <p class="radioText yes">Yes</p><br><br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <input type="radio" class="radioButton" id="useSymNo" name="useSym" value="no"><br><br>
+                                            </div>
+                                            <div class="col-sm-6 d-flex justify-content-center">
+                                                <p class="radioText no">No</p><br><br>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                             <br>
+                            <!--Where the magic happens: when the button is clicked, it invokes the beastly submitAns() function in the javascript file, setting in motion the Rube Goldberg machine that lies therein to generate a random password that a human can't spare 10 seconds to mash their keyboard to get themselves-->
                             <div class="d-flex justify-content-center">
-                                <button id="submitter" onclick="submitAns()" class="choiceBox">Submit answers</button>
+                                <button id="submitter" onclick="submitAns()" class="choiceBox"><p class="radioText">Submit answers</p></button>
                             </div>
                         </div>
                     </div>

@@ -1,27 +1,15 @@
 # HW-03
-Random password generator
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-The following image demonstrates the application functionality:
+Random Password Regenerizer
+An Idle Hands Deployment
 
-password generator demo
+This is a small application to quickly generate a random password using a combination of lowercase letters, uppercase letters, numbers, and symbols. The user has the ability to choose which to include, as well as to define how long they wish the password to be (between 8 and 128 characters).
 
-Review
-You are required to submit the following for review:
+Each character in the password is uniquely and randomly generated from the defined parameters, and then output on a prompt for the user to copy. Closing the prompt destroys this password forever.
 
-The URL of the deployed application.
+The application will stop and alert the user if they have made an error in attempting to define the parameters of the password outside of the stated capabilities and bounds of the generator.
 
-The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+There are no special software or hardware requirements, just a modern browser and a working finger will suffice. This application is also mobile-friendly.
+
+Enjoy the colorful layout and smooth interface as you abuse this application for an end-goal that you could achieve yourself by mashing a keyboard in ten seconds, as it took me many frustrating laborious hours to design and debug.
+
+--MM
