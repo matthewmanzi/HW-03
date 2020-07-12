@@ -13,3 +13,5 @@ There are no special software or hardware requirements, just a modern browser an
 Enjoy the colorful layout and smooth interface as you abuse this application for an end-goal that you could achieve yourself by mashing a keyboard in ten seconds, as it took me many frustrating laborious hours to design and debug.
 
 --MM
+
+![screenshot](https://github.com/matthewmanzi/HW-03/blob/master/preview.jpg)
